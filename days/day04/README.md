@@ -15,6 +15,8 @@ Add a `.gitignore` tailored to your stack. Make 3 small, focused commits with go
 ## Pro Tips
 - Use imperative mood: "add", "fix"; keep subject ≤72 chars.
 - Group unrelated changes into separate commits.
+- Use [gitignore.io](https://www.toptal.com/developers/gitignore) to generate templates for any tech stack.
+
 
 > **Note:** See github/gitignore for language-specific templates.
 
