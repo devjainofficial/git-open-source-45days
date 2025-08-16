@@ -1,0 +1,27 @@
+name: "Bug report"
+description: "Something in the exercises or docs doesn't work as expected"
+title: "[Bug]: <short description>"
+labels: ["bug"]
+body:
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: Describe the problem and what you expected instead.
+    validations:
+      required: true
+  - type: input
+    id: day
+    attributes:
+      label: Day number
+      placeholder: "e.g., 07"
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: "Commands or steps that led to the issue."
+  - type: textarea
+    id: env
+    attributes:
+      label: Environment
+      description: "OS, Git version, shell, etc."

@@ -1,0 +1,25 @@
+name: basic-checks
+on:
+  pull_request:
+    branches: [ main ]
+  push:
+    branches: [ main ]
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate day folders exist
+        run: |
+          for i in $(seq -w 1 45); do
+            test -d days/day${i} || (echo "Missing days/day${i}" && exit 1)
+          done
+      - name: Ensure each day has a README
+        run: |
+          for i in $(seq -w 1 45); do
+            test -s days/day${i}/README.md || (echo "Empty or missing README in day${i}" && exit 1)
+          done
+      - name: Basic trailing whitespace check
+        run: |
+          ! grep -RIn "[[:blank:]]$" days || (echo "Trailing whitespace found" && exit 1)
